@@ -63,9 +63,9 @@ const styles = StyleSheet.create({
         marginRight: 4,
     },
     inner: {
-        height: 15,
-        width: 15,
-        borderRadius: 8,
+        height: 12,
+        width: 12,
+        borderRadius: 6,
         backgroundColor: "black",
     },
     label: {
