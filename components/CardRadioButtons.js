@@ -1,50 +1,11 @@
-import { View, Text, Image, StyleSheet } from "react-native";
-import React, { useState } from "react";
-import logo from "../assets/images/logo.svg";
-import grower from "../assets/images/grower.svg";
-import processor from "../assets/images/processor.svg";
-import dispensary from "../assets/images/dispensary.svg";
-import transporters from "../assets/images/transporters.svg";
-import lab from "../assets/images/lab.svg";
-import debrisManagement from "../assets/images/debrisManagement.svg";
+import { View, Text, StyleSheet } from "react-native";
+import React from "react";
 import { GlobalStyles } from "../constants/style";
 import { Ionicons } from "@expo/vector-icons";
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
 
-const CardRadioButtons = () => {
-    const items = [
-        {
-            userType: "Grower",
-            description: "I am a grower to join cannabis connecter",
-            Icon: grower,
-        },
-        {
-            userType: "Processor",
-            description: "I am a processor to join cannabis connecter",
-            Icon: processor,
-        },
-        {
-            userType: "Dispensary",
-            description: "I am a processor to join cannabis connecter",
-            Icon: dispensary,
-        },
-        {
-            userType: "Transporters",
-            description: "I am a processor to join cannabis connecter",
-            Icon: transporters,
-        },
-        {
-            userType: "Lab",
-            description: "I am a processor to join cannabis connecter",
-            Icon: lab,
-        },
-        {
-            userType: "Debris Management",
-            description: "I am a processor to join cannabis connecter",
-            Icon: debrisManagement,
-        },
-    ];
-    const [value, setValue] = useState(null);
+const CardRadioButtons = ({ items, onPress, initial }) => {
+    // console.log(items);
     return (
         <View style={styles.container}>
             {items.map((item, index) => (
@@ -52,9 +13,10 @@ const CardRadioButtons = () => {
                     key={index}
                     style={[
                         styles.card,
-                        item.userType === value && styles.selected,
+                        item.userType === initial && styles.selected,
+                        item?.style && { alignSelf: "center" },
                     ]}
-                    onPress={() => setValue(item.userType)}
+                    onPress={() => onPress(item.userType)}
                 >
                     <item.Icon
                         width={40}
@@ -69,7 +31,7 @@ const CardRadioButtons = () => {
                     </View>
                     {/* <View style={styles.outer}></View> */}
                     <View style={styles.outer}>
-                        {item.userType === value ? (
+                        {item.userType === initial ? (
                             <Ionicons
                                 name="checkmark-circle-sharp"
                                 size={18}
@@ -96,7 +58,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         flexWrap: "wrap",
         marginVertical: 16,
-        justifyContent: "space-between",
+        justifyContent: "center",
     },
     card: {
         flexDirection: "row",
@@ -108,7 +70,7 @@ const styles = StyleSheet.create({
         paddingBottom: 12,
         paddingTop: 22,
         width: "47%",
-        marginVertical: 8,
+        marginVertical: 4,
         marginHorizontal: 4,
         position: "relative",
     },
@@ -124,11 +86,6 @@ const styles = StyleSheet.create({
         position: "absolute",
         top: 6,
         right: 8,
-        // height: 14,
-        // width: 14,
-        // borderRadius: 7,
-        // borderWidth: 1,
-        // borderColor: GlobalStyles.colors.gray200,
     },
     inner: {},
     selected: {

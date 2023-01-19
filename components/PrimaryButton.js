@@ -22,7 +22,7 @@ export default PrimaryButton;
 const styles = StyleSheet.create({
     buttonContainer: {
         backgroundColor: GlobalStyles.colors.primary500,
-        padding: 8,
+        padding: 10,
         borderRadius: 4,
     },
     pressed: {

@@ -7,8 +7,12 @@ import Logo from "../assets/images/logo.svg";
 import PrimaryButton from "../components/PrimaryButton";
 import TextButton from "../components/TextButton";
 
+import { licensedUsers, unlicensedUsers } from "../dummyData";
+("../dummyData");
+
 const OnBoarding = () => {
     const [value, setValue] = useState("licensed");
+    const [userType, setUserType] = useState(null);
     return (
         <View style={styles.screen}>
             <View style={styles.imageContainer}>
@@ -28,9 +32,21 @@ const OnBoarding = () => {
                     gap={32}
                 />
             </View>
-            <CardRadioButtons />
+            {value === "licensed" ? (
+                <CardRadioButtons
+                    items={licensedUsers}
+                    onPress={setUserType}
+                    initial={userType}
+                />
+            ) : (
+                <CardRadioButtons
+                    items={unlicensedUsers}
+                    onPress={setUserType}
+                    initial={userType}
+                />
+            )}
             <View style={styles.button}>
-                <PrimaryButton style={{ width: 160 }}>Continue</PrimaryButton>
+                <PrimaryButton style={{ width: 180 }}>Continue</PrimaryButton>
             </View>
             <View style={styles.sinInButtonContainer}>
                 <Text style={styles.signInText}>Already have an account?</Text>
