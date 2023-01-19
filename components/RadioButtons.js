@@ -53,9 +53,9 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     outer: {
-        height: 24,
-        width: 24,
-        borderRadius: 12,
+        height: 20,
+        width: 20,
+        borderRadius: 10,
         borderWidth: 2,
         justifyContent: "center",
         alignItems: "center",
@@ -63,9 +63,9 @@ const styles = StyleSheet.create({
         marginRight: 4,
     },
     inner: {
-        height: 12,
-        width: 12,
-        borderRadius: 6,
+        height: 10,
+        width: 10,
+        borderRadius: 5,
         backgroundColor: "black",
     },
     label: {
