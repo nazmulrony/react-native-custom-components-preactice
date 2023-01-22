@@ -10,9 +10,12 @@ import TextButton from "../components/TextButton";
 import { licensedUsers, unlicensedUsers } from "../dummyData";
 ("../dummyData");
 
-const OnBoarding = () => {
+const OnBoarding = ({ navigation }) => {
     const [value, setValue] = useState("licensed");
     const [userType, setUserType] = useState(null);
+    const singUpHandler = () => {
+        navigation.navigate("signupFrom");
+    };
     return (
         <View style={styles.screen}>
             <View style={styles.imageContainer}>
@@ -46,7 +49,9 @@ const OnBoarding = () => {
                 />
             )}
             <View style={styles.button}>
-                <PrimaryButton style={{ width: 180 }}>Continue</PrimaryButton>
+                <PrimaryButton style={{ width: 180 }} onPress={singUpHandler}>
+                    Continue
+                </PrimaryButton>
             </View>
             <View style={styles.sinInButtonContainer}>
                 <Text style={styles.signInText}>Already have an account?</Text>

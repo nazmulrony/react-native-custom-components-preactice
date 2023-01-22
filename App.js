@@ -1,20 +1,14 @@
+import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { StatusBar } from "expo-status-bar";
-import { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import RadioButtons from "./components/RadioButtons";
+import { StyleSheet } from "react-native";
+import DrawerNavigator from "./navigators/DrawerNavigator";
 import OnBoarding from "./screens/OnBoarding";
+import SignupForm from "./screens/signupForm";
 
 const Stack = createStackNavigator();
-
 export default function App() {
-    const items = [
-        { value: "seller", label: "seller" },
-        { value: "buyer", label: "buyer" },
-        { value: "admin", label: "admin" },
-        { value: "admin2", label: "admin2" },
-    ];
     return (
         <>
             <StatusBar style="auto" />
@@ -23,6 +17,20 @@ export default function App() {
                     <Stack.Screen
                         name="OnBoarding"
                         component={OnBoarding}
+                        options={{
+                            headerShown: false,
+                        }}
+                    />
+                    <Stack.Screen
+                        name="signupFrom"
+                        component={SignupForm}
+                        options={{
+                            headerShown: false,
+                        }}
+                    />
+                    <Stack.Screen
+                        name="drawer"
+                        component={DrawerNavigator}
                         options={{
                             headerShown: false,
                         }}
