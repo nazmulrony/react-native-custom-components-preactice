@@ -6,6 +6,8 @@ import { Ionicons } from "@expo/vector-icons";
 import Header from "../components/UnlicensedUsers/Header";
 import SearchBar from "../components/SearchBar";
 import BalanceChart from "../components/UnlicensedUsers/BalanceChart";
+import SalesChart from "../components/UnlicensedUsers/SalesChart";
+import RevenueChart from "../components/UnlicensedUsers/RevenueChart";
 
 const UnlicensedUsers = () => {
     return (
@@ -14,6 +16,16 @@ const UnlicensedUsers = () => {
                 <Header />
                 <SearchBar />
                 <BalanceChart />
+                <SalesChart />
+                <View
+                    style={{
+                        flexDirection: "row",
+                        justifyContent: "space-between",
+                    }}
+                >
+                    <RevenueChart />
+                    <RevenueChart />
+                </View>
             </ScrollView>
         </View>
     );

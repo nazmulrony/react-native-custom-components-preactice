@@ -6,7 +6,7 @@ import { Ionicons } from "@expo/vector-icons";
 const Header = () => {
     return (
         <View style={styles.profileContainer}>
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <View style={{ flexDirection: "row" }}>
                 <View style={styles.imageContainer}>
                     <Image
                         source={require("../../assets/images/person.webp")}

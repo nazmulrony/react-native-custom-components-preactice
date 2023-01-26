@@ -70,6 +70,7 @@ const BalanceChart = () => {
                         </LinearGradient>
                     </Defs>
                     <VictoryArea
+                        // interpolation="natural"
                         data={data}
                         animate
                         x="day"
