@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import React from "react";
 import { GlobalStyles } from "../constants/style";
 import { Ionicons } from "@expo/vector-icons";
@@ -14,7 +14,6 @@ const CardRadioButtons = ({ items, onPress, initial }) => {
                     style={[
                         styles.card,
                         item.userType === initial && styles.selected,
-                        item?.style && { alignSelf: "center" },
                     ]}
                     onPress={() => onPress(item.userType)}
                 >
@@ -55,8 +54,6 @@ export default CardRadioButtons;
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: "row",
-        flexWrap: "wrap",
         marginVertical: 16,
         justifyContent: "center",
     },
@@ -69,23 +66,22 @@ const styles = StyleSheet.create({
         paddingHorizontal: 4,
         paddingBottom: 12,
         paddingTop: 22,
-        width: "47%",
-        marginVertical: 4,
-        marginHorizontal: 4,
+        marginVertical: 8,
         position: "relative",
     },
     userType: {
         fontWeight: "bold",
-        fontSize: 12,
+        fontSize: 14,
     },
     description: {
-        fontSize: 10,
+        fontSize: 12,
         width: "60%",
+        color: GlobalStyles.colors.gray300,
     },
     outer: {
         position: "absolute",
-        top: 6,
-        right: 8,
+        top: 10,
+        right: 10,
     },
     inner: {},
     selected: {

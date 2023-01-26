@@ -6,7 +6,6 @@ import Auction from "../screens/Auction";
 import AddProduct from "../screens/AddProduct";
 import Inventory from "../screens/Inventory";
 import Profile from "../screens/Profile";
-import { color } from "react-native-reanimated";
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";

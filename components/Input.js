@@ -16,16 +16,16 @@ export default Input;
 const styles = StyleSheet.create({
     inputContainer: {
         marginHorizontal: 4,
-        marginVertical: 8,
+        marginVertical: 10,
     },
     label: {
-        color: GlobalStyles.colors.gray300,
+        color: GlobalStyles.colors.gray700,
         marginBottom: 4,
     },
     input: {
         borderWidth: 1,
         borderColor: GlobalStyles.colors.gray100,
-        padding: 6,
+        padding: 8,
         borderRadius: 4,
     },
 });

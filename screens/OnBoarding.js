@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import React, { useState } from "react";
 import RadioButtons from "../components/RadioButtons";
 import { GlobalStyles } from "../constants/style";
@@ -18,45 +18,49 @@ const OnBoarding = ({ navigation }) => {
     };
     return (
         <View style={styles.screen}>
-            <View style={styles.imageContainer}>
-                <Logo width={150} height={120} />
-            </View>
-            <Text style={styles.title}>Sign Up To Cannabis Connecter</Text>
-            <View style={styles.radioButtonContainer}>
-                <RadioButtons
-                    items={[
-                        { value: "licensed", label: "licensed users" },
-                        { value: "unlicensed", label: "unlicensed users" },
-                    ]}
-                    color={GlobalStyles.colors.primary500}
-                    onPress={setValue}
-                    initial={value}
-                    direction="row"
-                    gap={32}
-                />
-            </View>
-            {value === "licensed" ? (
-                <CardRadioButtons
-                    items={licensedUsers}
-                    onPress={setUserType}
-                    initial={userType}
-                />
-            ) : (
-                <CardRadioButtons
-                    items={unlicensedUsers}
-                    onPress={setUserType}
-                    initial={userType}
-                />
-            )}
-            <View style={styles.button}>
-                <PrimaryButton style={{ width: 180 }} onPress={singUpHandler}>
-                    Continue
-                </PrimaryButton>
-            </View>
-            <View style={styles.sinInButtonContainer}>
-                <Text style={styles.signInText}>Already have an account?</Text>
-                <TextButton>Sign In</TextButton>
-            </View>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <View style={styles.imageContainer}>
+                    <Logo width={150} height={120} />
+                </View>
+                <Text style={styles.title}>Sign Up To Cannabis Connecter</Text>
+                <View style={styles.radioButtonContainer}>
+                    <RadioButtons
+                        items={[
+                            { value: "licensed", label: "licensed users" },
+                            { value: "unlicensed", label: "unlicensed users" },
+                        ]}
+                        color={GlobalStyles.colors.primary500}
+                        onPress={setValue}
+                        initial={value}
+                        direction="row"
+                        gap={32}
+                    />
+                </View>
+                {value === "licensed" ? (
+                    <CardRadioButtons
+                        items={licensedUsers}
+                        onPress={setUserType}
+                        initial={userType}
+                    />
+                ) : (
+                    <CardRadioButtons
+                        items={unlicensedUsers}
+                        onPress={setUserType}
+                        initial={userType}
+                    />
+                )}
+                <View style={styles.button}>
+                    <PrimaryButton onPress={singUpHandler}>
+                        Continue
+                    </PrimaryButton>
+                </View>
+                <View style={styles.sinInButtonContainer}>
+                    <Text style={styles.signInText}>
+                        Already have an account?
+                    </Text>
+                    <TextButton>Sign In</TextButton>
+                </View>
+            </ScrollView>
         </View>
     );
 };
@@ -67,19 +71,22 @@ const styles = StyleSheet.create({
     screen: {
         flex: 1,
         backgroundColor: "#fff",
+        // marginTop: 32,
         paddingHorizontal: 16,
+        paddingVertical: 32,
     },
     imageContainer: {
         alignItems: "center",
-        marginTop: 100,
+        marginTop: 50,
     },
     image: {
         height: 100,
         width: 120,
     },
     title: {
+        fontSize: 22,
         textAlign: "center",
-        fontWeight: "bold",
+        fontWeight: "500",
         marginVertical: 16,
     },
     radioButtonContainer: {
@@ -96,5 +103,6 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
+        paddingBottom: 50,
     },
 });

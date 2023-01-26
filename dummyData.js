@@ -53,6 +53,5 @@ export const unlicensedUsers = [
         userType: "Consumers",
         description: "I am a processor to join cannabis connecter",
         Icon: dispensary,
-        style: { alignSelf: "center" },
     },
 ];

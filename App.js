@@ -6,12 +6,13 @@ import { StyleSheet } from "react-native";
 import DrawerNavigator from "./navigators/DrawerNavigator";
 import OnBoarding from "./screens/OnBoarding";
 import SignupForm from "./screens/signupForm";
+import UnlicensedUsers from "./screens/UnlicensedUsers";
 
 const Stack = createStackNavigator();
 export default function App() {
     return (
         <>
-            <StatusBar style="auto" />
+            <StatusBar style="dark" />
             <NavigationContainer>
                 <Stack.Navigator>
                     <Stack.Screen
@@ -25,12 +26,20 @@ export default function App() {
                         name="signupFrom"
                         component={SignupForm}
                         options={{
-                            headerShown: false,
+                            // headerShown: false,
+                            title: "",
                         }}
                     />
                     <Stack.Screen
                         name="drawer"
                         component={DrawerNavigator}
+                        options={{
+                            headerShown: false,
+                        }}
+                    />
+                    <Stack.Screen
+                        name="UnlicensedUsers"
+                        component={UnlicensedUsers}
                         options={{
                             headerShown: false,
                         }}

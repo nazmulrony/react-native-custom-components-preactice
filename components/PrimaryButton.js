@@ -4,12 +4,12 @@ import { GlobalStyles } from "../constants/style";
 
 const PrimaryButton = ({ style, onPress, children }) => {
     return (
-        <View style={styles.root}>
+        <View style={[styles.root, style]}>
             <Pressable
                 onPress={onPress}
                 style={({ pressed }) => pressed && styles.pressed}
             >
-                <View style={[styles.buttonContainer, style]}>
+                <View style={styles.buttonContainer}>
                     <Text style={styles.buttonText}>{children}</Text>
                 </View>
             </Pressable>
@@ -21,20 +21,18 @@ export default PrimaryButton;
 
 const styles = StyleSheet.create({
     root: {
-        alignItems: "center",
-        // borderWidth: 1,
-        // width: "100%",
+        width: "100%",
     },
     buttonContainer: {
         backgroundColor: GlobalStyles.colors.primary500,
-        padding: 10,
-        borderRadius: 4,
+        padding: 12,
+        borderRadius: 8,
     },
     pressed: {
         opacity: 0.75,
     },
     buttonText: {
-        fontSize: 12,
+        fontSize: 14,
         textAlign: "center",
         color: "white",
     },
