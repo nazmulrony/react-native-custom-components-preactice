@@ -34,6 +34,7 @@ const SalesChart = () => {
                         padding={{ top: 0, bottom: 0, right: 0, left: 0 }}
                         height={80}
                         width={80}
+                        radius={40}
                         innerRadius={30}
                         colorScale={[
                             "#9155FD",

@@ -15,14 +15,14 @@ export default function App() {
             <StatusBar style="dark" />
             <NavigationContainer>
                 <Stack.Navigator>
-                    <Stack.Screen
+                    {/* <Stack.Screen
                         name="OnBoarding"
                         component={OnBoarding}
                         options={{
                             headerShown: false,
                         }}
-                    />
-                    <Stack.Screen
+                    /> */}
+                    {/* <Stack.Screen
                         name="signupFrom"
                         component={SignupForm}
                         options={{
@@ -36,7 +36,7 @@ export default function App() {
                         options={{
                             headerShown: false,
                         }}
-                    />
+                    /> */}
                     <Stack.Screen
                         name="UnlicensedUsers"
                         component={UnlicensedUsers}

@@ -52,6 +52,7 @@ const RevenueChart = () => {
                     />
                     <VictoryAxis
                         style={{
+                            grid: { stroke: "none" },
                             axis: { stroke: "none" },
                             ticks: { stroke: "transparent" },
                             tickLabels: { fill: "transparent" },

@@ -1,7 +1,12 @@
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import React from "react";
 import { Defs, LinearGradient, Stop, Svg } from "react-native-svg";
-import { VictoryLabel, VictoryPie } from "victory-native";
+import {
+    VictoryAxis,
+    VictoryChart,
+    VictoryLabel,
+    VictoryPie,
+} from "victory-native";
 
 import { Entypo } from "@expo/vector-icons";
 import { GlobalStyles } from "../../constants/style";
@@ -24,40 +29,49 @@ const SalesHalfCircleChart = () => {
                 </TouchableOpacity>
             </View>
             <View style={styles.chartContainer}>
-                <Svg height={40} width={80}>
+                <VictoryChart
+                    height={40}
+                    width={80}
+                    padding={{ top: 40, bottom: 0, right: 0, left: 0 }}
+                >
                     <Defs>
                         <LinearGradient
                             id="salesChart"
-                            x1="0%"
+                            x1="100%"
                             x2="0%"
                             y1="0%"
-                            y2="100%"
+                            y2="0"
                         >
-                            <Stop offset="0%" stopColor="#9155FD" />
-                            <Stop offset="100%" stopColor="white" />
+                            <Stop offset="0%" stopColor="#4E83E1" />
+                            <Stop offset="100%" stopColor="#5CBAEE" />
                         </LinearGradient>
                     </Defs>
                     <VictoryPie
+                        radius={40}
                         innerRadius={32}
-                        colorScale={["#D9D9D9", "#5CBAEE"]}
-                        height={80}
-                        width={80}
-                        padding={{ top: 0, bottom: 0, right: 0, left: 0 }}
-                        startAngle={90}
-                        endAngle={-90}
-                        data={[100 - progress, progress]}
+                        colorScale={["url(#salesChart)", "#D9D9D9"]}
+                        startAngle={-90}
+                        endAngle={90}
+                        data={[progress, 100 - progress]}
+                        labels={() => ""}
                     />
                     <VictoryLabel
                         textAnchor="middle"
                         style={{
                             fontSize: 14,
-                            fontWeight: "400",
+                            fontWeight: "600",
                         }}
                         x={40}
                         y={30}
                         text={`${progress}%`}
                     />
-                </Svg>
+                    <VictoryAxis
+                        style={{
+                            grid: { stroke: "none" },
+                            axis: { stroke: "none" },
+                        }}
+                    />
+                </VictoryChart>
             </View>
         </View>
     );
