@@ -1,13 +1,13 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import React from "react";
-import { VictoryArea, VictoryAxis, VictoryChart } from "victory-native";
 import { Defs, LinearGradient, Stop, Svg } from "react-native-svg";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { VictoryLabel, VictoryPie } from "victory-native";
+
 import { Entypo } from "@expo/vector-icons";
 import { GlobalStyles } from "../../constants/style";
 
-const RevenueChart = () => {
-    const data = [1, 15, 20, 15, 12, 20, 35, 45, 50];
+const SalesHalfCircleChart = () => {
+    const progress = 70;
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -24,10 +24,10 @@ const RevenueChart = () => {
                 </TouchableOpacity>
             </View>
             <View style={styles.chartContainer}>
-                <VictoryChart height={40} width={90} padding={0}>
+                <Svg height={40} width={80}>
                     <Defs>
                         <LinearGradient
-                            id="revenueChart"
+                            id="salesChart"
                             x1="0%"
                             x2="0%"
                             y1="0%"
@@ -37,33 +37,33 @@ const RevenueChart = () => {
                             <Stop offset="100%" stopColor="white" />
                         </LinearGradient>
                     </Defs>
-                    <VictoryArea
-                        animate
-                        data={data}
-                        interpolation="natural"
-                        style={{
-                            data: {
-                                fill: "url(#revenueChart)",
-                                fillOpacity: 0.6,
-                                strokeWidth: 2,
-                                stopColor: "#9155FD",
-                            },
-                        }}
+                    <VictoryPie
+                        innerRadius={32}
+                        colorScale={["#D9D9D9", "#5CBAEE"]}
+                        height={80}
+                        width={80}
+                        padding={{ top: 0, bottom: 0, right: 0, left: 0 }}
+                        startAngle={90}
+                        endAngle={-90}
+                        data={[100 - progress, progress]}
                     />
-                    <VictoryAxis
+                    <VictoryLabel
+                        textAnchor="middle"
                         style={{
-                            axis: { stroke: "none" },
-                            ticks: { stroke: "transparent" },
-                            tickLabels: { fill: "transparent" },
+                            fontSize: 14,
+                            fontWeight: "400",
                         }}
+                        x={40}
+                        y={30}
+                        text={`${progress}%`}
                     />
-                </VictoryChart>
+                </Svg>
             </View>
         </View>
     );
 };
 
-export default RevenueChart;
+export default SalesHalfCircleChart;
 
 const styles = StyleSheet.create({
     container: {

@@ -1,18 +1,19 @@
-import { View, Text, ScrollView, Image } from "react-native";
+import { View, ScrollView } from "react-native";
 import React from "react";
 import { StyleSheet } from "react-native";
 import { GlobalStyles } from "../constants/style";
-import { Ionicons } from "@expo/vector-icons";
 import Header from "../components/UnlicensedUsers/Header";
 import SearchBar from "../components/SearchBar";
 import BalanceChart from "../components/UnlicensedUsers/BalanceChart";
 import SalesChart from "../components/UnlicensedUsers/SalesChart";
 import RevenueChart from "../components/UnlicensedUsers/RevenueChart";
+import SalesHalfCircleChart from "../components/UnlicensedUsers/SalesHalfCircleChart";
+import ProfitChart from "../components/UnlicensedUsers/ProfitChart";
 
 const UnlicensedUsers = () => {
     return (
         <View style={styles.screen}>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <Header />
                 <SearchBar />
                 <BalanceChart />
@@ -23,9 +24,12 @@ const UnlicensedUsers = () => {
                         justifyContent: "space-between",
                     }}
                 >
-                    <RevenueChart />
-                    <RevenueChart />
+                    <View style={{ marginRight: 16, flex: 0.6 }}>
+                        <RevenueChart />
+                    </View>
+                    <SalesHalfCircleChart />
                 </View>
+                <ProfitChart />
             </ScrollView>
         </View>
     );
