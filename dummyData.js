@@ -55,3 +55,133 @@ export const unlicensedUsers = [
         Icon: dispensary,
     },
 ];
+
+export const auctionData = [
+    {
+        id: "p1",
+        product: "Lemon Kush",
+        highestBid: 320.0,
+        category: "Flower",
+        client: "Jessy Pinkman",
+    },
+    {
+        id: "p2",
+        product: "Lemon Kush",
+        highestBid: 320.0,
+        category: "Flower",
+        client: "Jessy Pinkman",
+    },
+    {
+        id: "p3",
+        product: "Lemon Kush",
+        highestBid: 320.0,
+        category: "Flower",
+        client: "Jessy Pinkman",
+    },
+    {
+        id: "p4",
+        product: "Lemon Kush",
+        highestBid: 320.0,
+        category: "Flower",
+        client: "Jessy Pinkman",
+    },
+];
+
+export const transactionData = [
+    {
+        id: "001",
+        client: "Jim Green",
+        event: "Transporter payment",
+        amount: 320,
+    },
+    {
+        id: "001",
+        client: "Jim Green",
+        event: "Transporter payment",
+        amount: 320,
+    },
+    {
+        id: "001",
+        client: "Jim Green",
+        event: "Transporter payment",
+        amount: 320,
+    },
+    {
+        id: "001",
+        client: "Jim Green",
+        event: "Transporter payment",
+        amount: 320,
+    },
+    {
+        id: "001",
+        client: "Jim Green",
+        event: "Transporter payment",
+        amount: 320,
+    },
+    {
+        id: "001",
+        client: "Jim Green",
+        event: "Transporter payment",
+        amount: 320,
+    },
+    {
+        id: "001",
+        client: "Jim Green",
+        event: "Transporter payment",
+        amount: 320,
+    },
+    {
+        id: "001",
+        client: "Jim Green",
+        event: "Transporter payment",
+        amount: 320,
+    },
+    {
+        id: "001",
+        client: "Jim Green",
+        event: "Transporter payment",
+        amount: 320,
+    },
+    {
+        id: "001",
+        client: "Jim Green",
+        event: "Transporter payment",
+        amount: 320,
+    },
+    {
+        id: "001",
+        client: "Jim Green",
+        event: "Transporter payment",
+        amount: 320,
+    },
+    {
+        id: "001",
+        client: "Jim Green",
+        event: "Transporter payment",
+        amount: 320,
+    },
+    {
+        id: "001",
+        client: "Jim Green",
+        event: "Transporter payment",
+        amount: 320,
+    },
+    {
+        id: "001",
+        client: "Jim Green",
+        event: "Transporter payment",
+        amount: 320,
+    },
+    {
+        id: "001",
+        client: "Jim Green",
+        event: "Transporter payment",
+        amount: 320,
+    },
+    {
+        id: "001",
+        client: "Jim Green",
+        event: "Transporter payment",
+        amount: 320,
+    },
+];

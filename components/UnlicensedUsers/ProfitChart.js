@@ -1,13 +1,11 @@
 import { View, Text, StyleSheet, Dimensions } from "react-native";
 import React from "react";
 import { GlobalStyles } from "../../constants/style";
-import {
-    VictoryAxis,
-    VictoryBar,
-    VictoryChart,
-    VictoryTheme,
-} from "victory-native";
-import VictoryZoomContainer from "victory-native/src/components/victory-zoom-container";
+import { VictoryAxis, VictoryBar, VictoryChart } from "victory-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { Ionicons } from "@expo/vector-icons";
+import { Octicons } from "@expo/vector-icons";
+import PrimaryButton from "../PrimaryButton";
 const ProfitChart = () => {
     const data = [
         { day: "Sun", profit: 20 },
@@ -46,10 +44,53 @@ const ProfitChart = () => {
                     <VictoryAxis
                         style={{
                             tickLabels: { fill: "#8D8D97" },
+                            axis: { stroke: "#DADAD9" },
                         }}
                     />
                 </VictoryChart>
             </View>
+            <View
+                style={{
+                    borderTopWidth: 1,
+                    height: 0,
+                    marginVertical: 16,
+                    marginHorizontal: -16,
+                    borderTopColor: "#EEEEEE",
+                }}
+            ></View>
+            <Text style={styles.title}>$3232</Text>
+            <Text style={styles.fontBase}>Last week profit</Text>
+
+            <View style={styles.statusContainer}>
+                <TouchableOpacity style={styles.statusIcon}>
+                    <Octicons name="arrow-switch" size={24} color="#4CAF50" />
+                </TouchableOpacity>
+                <View>
+                    <Text style={styles.fontBaseDark}>$45675</Text>
+                    <Text style={styles.fontBase}>Last week profit</Text>
+                </View>
+            </View>
+            <View style={styles.statusContainer}>
+                <TouchableOpacity style={styles.statusIcon}>
+                    <Ionicons name="logo-usd" size={24} color="#4CAF50" />
+                </TouchableOpacity>
+                <View>
+                    <Text style={styles.fontBaseDark}>$45675</Text>
+                    <Text style={styles.fontBase}>Total income</Text>
+                </View>
+            </View>
+            <View style={styles.statusContainer}>
+                <TouchableOpacity style={styles.statusIcon}>
+                    <Ionicons name="md-stats-chart" size={24} color="#4CAF50" />
+                </TouchableOpacity>
+                <View>
+                    <Text style={styles.fontBaseDark}>$45675</Text>
+                    <Text style={styles.fontBase}>Total monthly profit</Text>
+                </View>
+            </View>
+            <PrimaryButton style={{ marginVertical: 16 }}>
+                View Reports
+            </PrimaryButton>
         </View>
     );
 };
@@ -71,6 +112,10 @@ const styles = StyleSheet.create({
         fontSize: 13,
         color: GlobalStyles.colors.gray300,
     },
+    fontBaseDark: {
+        fontSize: 13,
+        color: GlobalStyles.colors.gray700,
+    },
     title: {
         fontSize: 18,
         fontWeight: "600",
@@ -82,5 +127,19 @@ const styles = StyleSheet.create({
     },
     chartContainer: {
         alignItems: "flex-end",
+    },
+    statusContainer: {
+        flexDirection: "row",
+        marginVertical: 8,
+        alignItems: "center",
+    },
+    statusIcon: {
+        height: 44,
+        width: 44,
+        borderRadius: 8,
+        backgroundColor: "#ECFFED",
+        justifyContent: "center",
+        alignItems: "center",
+        marginRight: 8,
     },
 });

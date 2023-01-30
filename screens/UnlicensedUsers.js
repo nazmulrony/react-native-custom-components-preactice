@@ -9,6 +9,8 @@ import SalesChart from "../components/UnlicensedUsers/SalesChart";
 import RevenueChart from "../components/UnlicensedUsers/RevenueChart";
 import SalesHalfCircleChart from "../components/UnlicensedUsers/SalesHalfCircleChart";
 import ProfitChart from "../components/UnlicensedUsers/ProfitChart";
+import AuctionStatus from "../components/UnlicensedUsers/AuctionStatus";
+import TransactionHistory from "../components/UnlicensedUsers/TransactionHistory";
 
 const UnlicensedUsers = () => {
     return (
@@ -30,6 +32,8 @@ const UnlicensedUsers = () => {
                     <SalesHalfCircleChart />
                 </View>
                 <ProfitChart />
+                <AuctionStatus />
+                <TransactionHistory />
             </ScrollView>
         </View>
     );
@@ -43,6 +47,7 @@ const styles = StyleSheet.create({
         backgroundColor: GlobalStyles.colors.light50,
         paddingHorizontal: 16,
         paddingTop: 32,
+        paddingBottom: 24,
     },
     profileContainer: {
         flexDirection: "row",

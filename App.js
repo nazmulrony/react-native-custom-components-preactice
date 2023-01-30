@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet } from "react-native";
 import DrawerNavigator from "./navigators/DrawerNavigator";
+import Inventory from "./screens/Inventory";
 import OnBoarding from "./screens/OnBoarding";
 import SignupForm from "./screens/signupForm";
 import UnlicensedUsers from "./screens/UnlicensedUsers";
@@ -21,8 +22,8 @@ export default function App() {
                         options={{
                             headerShown: false,
                         }}
-                    /> */}
-                    {/* <Stack.Screen
+                    />
+                    <Stack.Screen
                         name="signupFrom"
                         component={SignupForm}
                         options={{
@@ -37,13 +38,14 @@ export default function App() {
                             headerShown: false,
                         }}
                     /> */}
-                    <Stack.Screen
+                    {/* <Stack.Screen
                         name="UnlicensedUsers"
                         component={UnlicensedUsers}
                         options={{
                             headerShown: false,
                         }}
-                    />
+                    /> */}
+                    <Stack.Screen name="Inventory" component={Inventory} />
                 </Stack.Navigator>
             </NavigationContainer>
         </>
