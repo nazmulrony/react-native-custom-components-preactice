@@ -45,7 +45,16 @@ export default function App() {
                             headerShown: false,
                         }}
                     /> */}
-                    <Stack.Screen name="Inventory" component={Inventory} />
+                    <Stack.Screen
+                        name="Inventory"
+                        component={Inventory}
+                        options={{
+                            headerStyle: {
+                                backgroundColor: "#F5F5F5",
+                                elevation: 0,
+                            },
+                        }}
+                    />
                 </Stack.Navigator>
             </NavigationContainer>
         </>

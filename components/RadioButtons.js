@@ -69,6 +69,6 @@ const styles = StyleSheet.create({
         backgroundColor: "black",
     },
     label: {
-        textTransform: "capitalize",
+        // textTransform: "capitalize",
     },
 });
