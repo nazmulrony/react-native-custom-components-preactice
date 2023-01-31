@@ -11,7 +11,7 @@ const PrimaryButton = ({ style, onPress, children, icon }) => {
                 style={({ pressed }) => pressed && styles.pressed}
             >
                 <View style={styles.buttonContainer}>
-                    <Ionicons name={icon} size={24} color="white" />
+                    {icon && <Ionicons name={icon} size={24} color="white" />}
                     <Text style={styles.buttonText}>{children}</Text>
                 </View>
             </Pressable>

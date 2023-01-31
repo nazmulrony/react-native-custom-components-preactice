@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { GlobalStyles } from "../../constants/style";
 import RadioButtons from "../RadioButtons";
 import PrimaryButton from "../PrimaryButton";
-import { Ionicons } from "@expo/vector-icons";
 
 const YourProduct = () => {
     const [value, setValue] = useState("lb");
@@ -47,7 +46,7 @@ export default YourProduct;
 const styles = StyleSheet.create({
     container: {
         padding: 16,
-        backgroundColor: "#ffffff",
+        backgroundColor: "#ffffffff",
         borderRadius: 8,
     },
     title: {

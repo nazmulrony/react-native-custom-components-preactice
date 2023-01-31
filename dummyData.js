@@ -4,6 +4,12 @@ import dispensary from "./assets/images/dispensary.svg";
 import transporters from "./assets/images/transporters.svg";
 import lab from "./assets/images/lab.svg";
 import debrisManagement from "./assets/images/debrisManagement.svg";
+import inventory from "./assets/images/inventory.svg";
+import published from "./assets/images/published.svg";
+import marketPlace from "./assets/images/marketPlace.svg";
+import unallocated from "./assets/images/unallocated.svg";
+import auction from "./assets/images/auction.svg";
+import bundle from "./assets/images/bundle.svg";
 
 export const licensedUsers = [
     {
@@ -183,5 +189,38 @@ export const transactionData = [
         client: "Jim Green",
         event: "Transporter payment",
         amount: 320,
+    },
+];
+
+export const productInfo = [
+    {
+        name: "All Inventory",
+        amount: 2000,
+        Icon: inventory,
+    },
+    {
+        name: "Published",
+        amount: 500,
+        Icon: published,
+    },
+    {
+        name: "Market Place",
+        amount: 700,
+        Icon: marketPlace,
+    },
+    {
+        name: "Auction",
+        amount: 300,
+        Icon: auction,
+    },
+    {
+        name: "Unallocated",
+        amount: 600,
+        Icon: unallocated,
+    },
+    {
+        name: "Bundle",
+        amount: 500,
+        Icon: bundle,
     },
 ];

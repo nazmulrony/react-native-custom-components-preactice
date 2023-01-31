@@ -3,9 +3,9 @@ import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { GlobalStyles } from "../constants/style";
 
-const SearchBar = () => {
+const SearchBar = ({ style }) => {
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, style]}>
             <Ionicons
                 name="ios-search-outline"
                 size={24}
@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 12,
         paddingVertical: 12,
         borderRadius: 8,
+        // marginBottom: 36,
     },
     input: {
         flex: 1,
